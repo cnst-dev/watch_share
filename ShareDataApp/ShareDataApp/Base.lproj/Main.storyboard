@@ -32,62 +32,77 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eec-yr-D50">
-                                        <rect key="frame" x="36" y="43.5" width="200" height="334"/>
+                                        <rect key="frame" x="26" y="43.5" width="220" height="334"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmH-o0-g2I">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="51"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="51"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="VPX-ql-fMB"/>
+                                                    <constraint firstAttribute="width" constant="220" id="VPX-ql-fMB"/>
                                                 </constraints>
                                                 <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
                                                 <state key="normal" title="Transfer User Info">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="userInfoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ise-sw-Xu8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dF9-6G-xCc">
-                                                <rect key="frame" x="0.0" y="71" width="200" height="50.5"/>
+                                                <rect key="frame" x="0.0" y="71" width="220" height="50.5"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="F0A-Iu-QLm"/>
+                                                    <constraint firstAttribute="width" constant="220" id="F0A-Iu-QLm"/>
                                                 </constraints>
                                                 <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
                                                 <state key="normal" title="Send Message">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gR8-lq-Ewh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSG-GX-Acq">
-                                                <rect key="frame" x="0.0" y="141.5" width="200" height="51"/>
+                                                <rect key="frame" x="0.0" y="141.5" width="220" height="51"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="FYi-t4-uBn"/>
+                                                    <constraint firstAttribute="width" constant="220" id="FYi-t4-uBn"/>
                                                 </constraints>
                                                 <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
-                                                <state key="normal" title="Send Message with reply">
+                                                <state key="normal" title="Send Message with response">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="responseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Upq-aT-KAf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWn-Tx-aI0">
-                                                <rect key="frame" x="0.0" y="212.5" width="200" height="51"/>
+                                                <rect key="frame" x="0.0" y="212.5" width="220" height="51"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="7MH-Op-6T2"/>
+                                                    <constraint firstAttribute="width" constant="220" id="7MH-Op-6T2"/>
                                                 </constraints>
                                                 <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
                                                 <state key="normal" title="Send App Context">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="appContextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fH-AL-d7K"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVz-Pt-wXk">
-                                                <rect key="frame" x="0.0" y="283.5" width="200" height="51"/>
+                                                <rect key="frame" x="0.0" y="283.5" width="220" height="51"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="e49-ii-iCz"/>
+                                                    <constraint firstAttribute="width" constant="220" id="e49-ii-iCz"/>
                                                 </constraints>
                                                 <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
                                                 <state key="normal" title="Send File">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="fileButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtN-Bd-xw1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -114,6 +129,9 @@
                             <constraint firstItem="4v6-ze-RsD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="e2k-e8-1ql"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dataLabel" destination="Ai3-F8-nWD" id="m5J-M0-5QB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

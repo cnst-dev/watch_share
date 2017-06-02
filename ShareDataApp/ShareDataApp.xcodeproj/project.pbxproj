@@ -19,6 +19,10 @@
 		CF64B1B21EDFEE7300CBA763 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64B1B11EDFEE7300CBA763 /* InterfaceController.swift */; };
 		CF64B1B41EDFEE7300CBA763 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64B1B31EDFEE7300CBA763 /* ExtensionDelegate.swift */; };
 		CF64B1B61EDFEE7300CBA763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF64B1B51EDFEE7300CBA763 /* Assets.xcassets */; };
+		CF9BEFA51EE1481500D24CA4 /* WatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9BEFA41EE1481500D24CA4 /* WatchSession.swift */; };
+		CF9BEFA61EE1481500D24CA4 /* WatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9BEFA41EE1481500D24CA4 /* WatchSession.swift */; };
+		CF9BEFA81EE1852000D24CA4 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9BEFA71EE1852000D24CA4 /* FileManager.swift */; };
+		CF9BEFA91EE1852000D24CA4 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9BEFA71EE1852000D24CA4 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,8 @@
 		CF64B1B31EDFEE7300CBA763 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CF64B1B51EDFEE7300CBA763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF64B1B71EDFEE7300CBA763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9BEFA41EE1481500D24CA4 /* WatchSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSession.swift; sourceTree = "<group>"; };
+		CF9BEFA71EE1852000D24CA4 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,8 @@
 				CF64B1951EDFEE7300CBA763 /* Assets.xcassets */,
 				CF64B1971EDFEE7300CBA763 /* LaunchScreen.storyboard */,
 				CF64B19A1EDFEE7300CBA763 /* Info.plist */,
+				CF9BEFA41EE1481500D24CA4 /* WatchSession.swift */,
+				CF9BEFA71EE1852000D24CA4 /* FileManager.swift */,
 			);
 			path = ShareDataApp;
 			sourceTree = "<group>";
@@ -294,6 +302,8 @@
 			files = (
 				CF64B1911EDFEE7300CBA763 /* MainViewController.swift in Sources */,
 				CF64B18F1EDFEE7300CBA763 /* AppDelegate.swift in Sources */,
+				CF9BEFA51EE1481500D24CA4 /* WatchSession.swift in Sources */,
+				CF9BEFA81EE1852000D24CA4 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +313,8 @@
 			files = (
 				CF64B1B41EDFEE7300CBA763 /* ExtensionDelegate.swift in Sources */,
 				CF64B1B21EDFEE7300CBA763 /* InterfaceController.swift in Sources */,
+				CF9BEFA61EE1481500D24CA4 /* WatchSession.swift in Sources */,
+				CF9BEFA91EE1852000D24CA4 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +569,7 @@
 				CF64B1BC1EDFEE7300CBA763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF64B1BE1EDFEE7300CBA763 /* Build configuration list for PBXNativeTarget "ShareDataApp WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +578,7 @@
 				CF64B1C01EDFEE7300CBA763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF64B1C21EDFEE7300CBA763 /* Build configuration list for PBXNativeTarget "ShareDataApp" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +587,7 @@
 				CF64B1C41EDFEE7300CBA763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
