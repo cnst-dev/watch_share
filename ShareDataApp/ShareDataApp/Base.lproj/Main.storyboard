@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,13 +19,105 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4v6-ze-RsD">
+                                <rect key="frame" x="24" y="28" width="272" height="532"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Data to the watch:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6y-Ht-mbs">
+                                        <rect key="frame" x="34" y="0.0" width="204" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.58431372550000005" green="0.88235294119999996" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eec-yr-D50">
+                                        <rect key="frame" x="36" y="43.5" width="200" height="334"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmH-o0-g2I">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="51"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="VPX-ql-fMB"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
+                                                <state key="normal" title="Transfer User Info">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dF9-6G-xCc">
+                                                <rect key="frame" x="0.0" y="71" width="200" height="50.5"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="F0A-Iu-QLm"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
+                                                <state key="normal" title="Send Message">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSG-GX-Acq">
+                                                <rect key="frame" x="0.0" y="141.5" width="200" height="51"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="FYi-t4-uBn"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
+                                                <state key="normal" title="Send Message with reply">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWn-Tx-aI0">
+                                                <rect key="frame" x="0.0" y="212.5" width="200" height="51"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="7MH-Op-6T2"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
+                                                <state key="normal" title="Send App Context">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVz-Pt-wXk">
+                                                <rect key="frame" x="0.0" y="283.5" width="200" height="51"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="e49-ii-iCz"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
+                                                <state key="normal" title="Send File">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data from the watch:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZb-Ng-Bdp">
+                                        <rect key="frame" x="47" y="388" width="178" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data here!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai3-F8-nWD">
+                                        <rect key="frame" x="23.5" y="431" width="225.5" height="101"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="4v6-ze-RsD" secondAttribute="trailing" constant="8" id="3M0-30-LMw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4v6-ze-RsD" secondAttribute="bottom" constant="8" id="Lm6-uU-oG3"/>
+                            <constraint firstItem="4v6-ze-RsD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="YrZ-bw-qHt"/>
+                            <constraint firstItem="4v6-ze-RsD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="e2k-e8-1ql"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="71" y="-76"/>
         </scene>
     </scenes>
 </document>
