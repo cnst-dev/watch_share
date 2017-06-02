@@ -77,7 +77,7 @@ class MainViewController: UIViewController, WCSessionDelegate, WatchSession, Fil
         do {
             let text = "Saved text from the iPhone"
             try text.write(to: sourceURL, atomically: true, encoding: String.Encoding.utf8)
-        }  catch let error as NSError {
+        } catch let error as NSError {
             print("ERROR: \(error)")
         }
         defaultSession.transferFile(sourceURL, metadata: nil)
@@ -90,7 +90,6 @@ class MainViewController: UIViewController, WCSessionDelegate, WatchSession, Fil
         }
     }
 
-
     func sessionDidBecomeInactive(_ session: WCSession) {
         print("Communication is inactive")
     }
@@ -101,4 +100,3 @@ class MainViewController: UIViewController, WCSessionDelegate, WatchSession, Fil
     }
 
 }
-

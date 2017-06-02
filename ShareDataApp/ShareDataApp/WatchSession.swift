@@ -12,7 +12,7 @@ import WatchConnectivity
 protocol WatchSession {}
 
 extension WatchSession {
-    
+
     var defaultSession: WCSession {
         return WCSession.default()
     }
