@@ -9,7 +9,7 @@
 import UIKit
 import WatchConnectivity
 
-class MainViewController: UIViewController, WCSessionDelegate, WatchSession, FileManagerSupport {
+class MainViewController: UIViewController, WatchSession, FileManagerSupport {
 
     // MARK: - Outlets
     @IBOutlet private weak var dataLabel: UILabel!
@@ -18,14 +18,13 @@ class MainViewController: UIViewController, WCSessionDelegate, WatchSession, Fil
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard WCSession.isSupported() else { return }
-        defaultSession.delegate = self
-        defaultSession.activate()
+        guard isSuported else { return }
+        activateSession()
     }
 
     // MARK: - User Info
     @IBAction private func userInfoButtonPressed(_ sender: UIButton) {
-        guard defaultSession.activationState == .activated else { return }
+        guard isActivated else { return }
         let userInfo = ["text": "User Info from the iPhone"]
         defaultSession.transferUserInfo(userInfo)
     }
@@ -39,15 +38,15 @@ class MainViewController: UIViewController, WCSessionDelegate, WatchSession, Fil
 
     // MARK: - Message
     @IBAction private func messageButtonPressed(_ sender: UIButton) {
-        guard defaultSession.activationState == .activated else { return }
-        guard defaultSession.isReachable else { return }
+        guard isActivated else { return }
+        guard isReachable else { return }
         let message = ["text": "Message from the iPhone"]
         defaultSession.sendMessage(message, replyHandler: nil)
     }
 
     @IBAction private func responseButtonPressed(_ sender: UIButton) {
-        guard defaultSession.activationState == .activated else { return }
-        guard defaultSession.isReachable else { return }
+        guard isActivated else { return }
+        guard isReachable else { return }
         let message = ["text": "Message with the response from the iPhone"]
         defaultSession.sendMessage(message, replyHandler: { response in
             DispatchQueue.main.async { [weak self] in
@@ -60,7 +59,7 @@ class MainViewController: UIViewController, WCSessionDelegate, WatchSession, Fil
 
     // MARK: - Context
     @IBAction private func appContextButtonPressed(_ sender: Any) {
-        guard defaultSession.activationState == .activated else { return }
+        guard isActivated else { return }
         let context = ["text": "Updated context from the iPhone"]
         do {
             try defaultSession.updateApplicationContext(context)
@@ -71,7 +70,7 @@ class MainViewController: UIViewController, WCSessionDelegate, WatchSession, Fil
 
     // MARK: - File
     @IBAction private func fileButtonPressed(_ sender: UIButton) {
-        guard defaultSession.activationState == .activated else { return }
+        guard isActivated else { return }
         let sourceURL = documentDirectory.appendingPathComponent("save")
         guard !defaultFileManager.fileExists(atPath: sourceURL.path) else { return }
         do {

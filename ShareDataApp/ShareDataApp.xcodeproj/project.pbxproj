@@ -106,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF6261801EE67EA300240B7E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CF9BEFA71EE1852000D24CA4 /* FileManager.swift */,
+				CF9BEFA41EE1481500D24CA4 /* WatchSession.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		CF64B1821EDFEE7300CBA763 = {
 			isa = PBXGroup;
 			children = (
@@ -129,14 +138,13 @@
 		CF64B18D1EDFEE7300CBA763 /* ShareDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				CF6261801EE67EA300240B7E /* Protocols */,
 				CF64B18E1EDFEE7300CBA763 /* AppDelegate.swift */,
 				CF64B1901EDFEE7300CBA763 /* MainViewController.swift */,
 				CF64B1921EDFEE7300CBA763 /* Main.storyboard */,
 				CF64B1951EDFEE7300CBA763 /* Assets.xcassets */,
 				CF64B1971EDFEE7300CBA763 /* LaunchScreen.storyboard */,
 				CF64B19A1EDFEE7300CBA763 /* Info.plist */,
-				CF9BEFA41EE1481500D24CA4 /* WatchSession.swift */,
-				CF9BEFA71EE1852000D24CA4 /* FileManager.swift */,
 			);
 			path = ShareDataApp;
 			sourceTree = "<group>";

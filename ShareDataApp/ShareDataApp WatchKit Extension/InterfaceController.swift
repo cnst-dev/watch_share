@@ -10,7 +10,7 @@ import WatchKit
 import WatchConnectivity
 import Foundation
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate, FileManagerSupport, WatchSession {
+class InterfaceController: WKInterfaceController, FileManagerSupport, WatchSession {
 
     // MARK: - Outlets
     @IBOutlet private var dataLabel: WKInterfaceLabel!
@@ -19,14 +19,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, FileManager
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
-        guard WCSession.isSupported() else { return }
-        defaultSession.delegate = self
-        defaultSession.activate()
+        guard isSuported else { return }
+        activateSession()
     }
 
     // MARK: - User Info
     @IBAction private func sendButtonPressed() {
-        guard defaultSession.activationState == .activated else { return }
+        guard isActivated else { return }
         let userInfo = ["text": "User Info from the watch"]
         defaultSession.transferUserInfo(userInfo)
     }
