@@ -15,12 +15,27 @@ class InterfaceController: WKInterfaceController, FileManagerSupport, WatchSessi
     // MARK: - Outlets
     @IBOutlet private var dataLabel: WKInterfaceLabel!
 
+    // MARK: - Properties
+    var text: String? {
+        didSet {
+            guard let text = text else { return }
+            setTextAsync(text)
+        }
+    }
+
     // MARK: - WKInterfaceController
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
         guard isSuported else { return }
         activateSession()
+    }
+
+    // MARK: - Text
+    func setTextAsync(_ text: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.dataLabel.setText(text)
+        }
     }
 
     // MARK: - User Info
@@ -31,44 +46,29 @@ class InterfaceController: WKInterfaceController, FileManagerSupport, WatchSessi
     }
 
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        DispatchQueue.main.async { [weak self] in
-            guard let text = userInfo["text"] as? String else { return }
-            self?.dataLabel.setText(text)
-        }
+        text = userInfo["text"] as? String
     }
 
     // MARK: - Message
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        DispatchQueue.main.async { [weak self] in
-            guard let text = message["text"] as? String else { return }
-            self?.dataLabel.setText(text)
-        }
+        text = message["text"] as? String
     }
 
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        DispatchQueue.main.async { [weak self] in
-            guard let text = message["text"] as? String else { return }
-            self?.dataLabel.setText(text)
-        }
+        text = message["text"] as? String
         let response = ["response": "Response from the watch"]
         replyHandler(response)
     }
 
     // MARK: - Context
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        DispatchQueue.main.async { [weak self] in
-            guard let text = applicationContext["text"] as? String else { return }
-            self?.dataLabel.setText(text)
-        }
+        text = applicationContext["text"] as? String
     }
 
     // MARK: - File
     func session(_ session: WCSession, didReceive file: WCSessionFile) {
         do {
-            let text = try String(contentsOf: file.fileURL)
-            DispatchQueue.main.async { [weak self] in
-                self?.dataLabel.setText(text)
-            }
+            text = try String(contentsOf: file.fileURL)
         } catch let error as NSError {
             print("ERROR: \(error)")
         }
