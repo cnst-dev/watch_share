@@ -16,10 +16,12 @@ class InterfaceController: WKInterfaceController, FileManagerSupport, WatchSessi
     @IBOutlet private var dataLabel: WKInterfaceLabel!
 
     // MARK: - Properties
-    var text: String? {
+    private var text: String? {
         didSet {
             guard let text = text else { return }
-            setTextAsync(text)
+            DispatchQueue.main.async { [weak self] in
+                self?.dataLabel.setText(text)
+            }
         }
     }
 
@@ -29,13 +31,6 @@ class InterfaceController: WKInterfaceController, FileManagerSupport, WatchSessi
 
         guard isSuported else { return }
         activateSession()
-    }
-
-    // MARK: - Text
-    func setTextAsync(_ text: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.dataLabel.setText(text)
-        }
     }
 
     // MARK: - User Info

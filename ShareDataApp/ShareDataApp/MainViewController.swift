@@ -14,6 +14,16 @@ class MainViewController: UIViewController, WatchSession, FileManagerSupport {
     // MARK: - Outlets
     @IBOutlet private weak var dataLabel: UILabel!
 
+    // MARK: - Properties
+    private var text: String? {
+        didSet {
+            guard let text = text else { return }
+            DispatchQueue.main.async { [weak self] in
+                self?.dataLabel.text = text
+            }
+        }
+    }
+
     // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +40,7 @@ class MainViewController: UIViewController, WatchSession, FileManagerSupport {
     }
 
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        DispatchQueue.main.async { [weak self] in
-            guard let text = userInfo["text"] as? String else { return }
-            self?.dataLabel.text = text
-        }
+        text = userInfo["text"] as? String
     }
 
     // MARK: - Message
@@ -48,12 +55,8 @@ class MainViewController: UIViewController, WatchSession, FileManagerSupport {
         guard isActivated else { return }
         guard isReachable else { return }
         let message = ["text": "Message with the response from the iPhone"]
-        defaultSession.sendMessage(message, replyHandler: { response in
-            DispatchQueue.main.async { [weak self] in
-                guard let text = response["response"] as? String else { return }
-                self?.dataLabel.text = text
-            }
-
+        defaultSession.sendMessage(message, replyHandler: { [weak self] (response) in
+            self?.text = response["response"] as? String
         })
     }
 
