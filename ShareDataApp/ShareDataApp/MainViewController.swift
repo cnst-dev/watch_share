@@ -33,17 +33,28 @@ class MainViewController: UIViewController, WatchSession, FileManagerSupport {
     }
 
     // MARK: - User Info
+    /// Sends a UserInfo dictionary to the Watch app.
+    ///
+    /// - Parameter sender: - The button from the Main.storyboard.
     @IBAction private func userInfoButtonPressed(_ sender: UIButton) {
         guard isActivated else { return }
         let userInfo = ["text": "User Info from the iPhone"]
         defaultSession.transferUserInfo(userInfo)
     }
 
+    /// Receives a UserInfo dictionary from the Watch app and sets the text property.
+    ///
+    /// - Parameters:
+    ///   - session: The session object of the current process.
+    ///   - userInfo: A dictionary of property list values representing the contents of the message.
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         text = userInfo["text"] as? String
     }
 
     // MARK: - Message
+    /// Sends a message dictionary immediately to the Watch app.
+    ///
+    /// - Parameter sender: - The button from the Main.storyboard.
     @IBAction private func messageButtonPressed(_ sender: UIButton) {
         guard isActivated else { return }
         guard isReachable else { return }
@@ -51,6 +62,10 @@ class MainViewController: UIViewController, WatchSession, FileManagerSupport {
         defaultSession.sendMessage(message, replyHandler: nil)
     }
 
+    /// Sends a message dicitionary immediately to the Watch app and handles a response. 
+    /// Receives a reply from the Watch app and sets the text property.
+    ///
+    /// - Parameter sender: - The button from the Main.storyboard.
     @IBAction private func responseButtonPressed(_ sender: UIButton) {
         guard isActivated else { return }
         guard isReachable else { return }
@@ -61,6 +76,9 @@ class MainViewController: UIViewController, WatchSession, FileManagerSupport {
     }
 
     // MARK: - Context
+    /// Sends a context dictionary to the Watch app.
+    ///
+    /// - Parameter sender: - The button from the Main.storyboard.
     @IBAction private func appContextButtonPressed(_ sender: Any) {
         guard isActivated else { return }
         let context = ["text": "Updated context from the iPhone"]
@@ -72,6 +90,9 @@ class MainViewController: UIViewController, WatchSession, FileManagerSupport {
     }
 
     // MARK: - File
+    /// Sends a file that is local to the iOS app to the Watch app.
+    ///
+    /// - Parameter sender: - The button from the Main.storyboard.
     @IBAction private func fileButtonPressed(_ sender: UIButton) {
         guard isActivated else { return }
         let sourceURL = documentDirectory.appendingPathComponent("save")

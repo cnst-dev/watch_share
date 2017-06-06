@@ -34,21 +34,38 @@ class InterfaceController: WKInterfaceController, FileManagerSupport, WatchSessi
     }
 
     // MARK: - User Info
+    /// Sends a UserInfo dictionary to the iOS app.
     @IBAction private func sendButtonPressed() {
         guard isActivated else { return }
         let userInfo = ["text": "User Info from the watch"]
         defaultSession.transferUserInfo(userInfo)
     }
 
+    /// Receives a UserInfo dictionary from the iOS app and sets the text property.
+    ///
+    /// - Parameters:
+    ///   - session: The session object of the current process.
+    ///   - userInfo: A dictionary of property list values representing the contents of the message.
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         text = userInfo["text"] as? String
     }
 
     // MARK: - Message
+    /// Receives a Message dictionary from the iOS app and sets the text property.
+    ///
+    /// - Parameters:
+    ///   - session: The session object of the current process.
+    ///   - message: A dictionary of property list values representing the contents of the message.
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         text = message["text"] as? String
     }
 
+    /// Receives a Message dictionary from the iOS app and sets the text property. Provides an appropriate reply to the iOS app.
+    ///
+    /// - Parameters:
+    ///   - session: The session object of the current process.
+    ///   - message: A dictionary of property list values representing the contents of the message.
+    ///   - replyHandler: A reply block to execute with the response.
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         text = message["text"] as? String
         let response = ["response": "Response from the watch"]
@@ -56,6 +73,11 @@ class InterfaceController: WKInterfaceController, FileManagerSupport, WatchSessi
     }
 
     // MARK: - Context
+    /// Receives a Context dictionary from the iOS apps and sets the text property.
+    ///
+    /// - Parameters:
+    ///   - session: The session object of the current process.
+    ///   - applicationContext: The context data from the iOS app.
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         text = applicationContext["text"] as? String
     }
