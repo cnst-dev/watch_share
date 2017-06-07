@@ -1,4 +1,4 @@
-# watch_share
+# Let's make communications between iPhone and Apple Watch apps.
 Code examples to make communications between iPhone and Apple Watch apps.
 
 [![License](http://img.shields.io/badge/License-MIT-green.svg?style=flat)](https://github.com/justaninja/watch_share/blob/master/LICENSE)
